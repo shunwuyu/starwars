@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>星球大战 原力觉醒</title>
+  <style>
+  /* css reset  */
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  /* html5强大的表现力，来自于创造
+  星空就是一张背景图片， 平铺，没有间隔，
+  就好像茫茫宇宙一样 
+  要做动画,先做静态 
+  */
+  body{
+    background: url(images/bg.jpg);
+  }
+  
+  img {
+    width: 100%;
+  }
+
+  .starwars-demo {
+    height: 17em;
+    position: absolute;
+    left: 50%;
+    top: 53%;
+    width: 34em;
+    transform: translate(-50%,-50%);
+    /* 视角 透视 眼睛离页面有800px ,  */
+    perspective: 800px;
+    /* 支持z轴 */
+    transform-style: preserve-3d;
+  }
+
+  .star, .wars {
+    position: absolute;
+  }
+
+  .star {
+    top: -.75em;
+    /* css3动画 动作导演 */
+    animation: star 10s ease-out infinite; 
+  }
+  /* 关键桢动画 */
+  @keyframes star {
+    0% {
+      opacity: 0;
+      /* 移动 放大 */
+      transform: scale(1.5);
+    }
+    20% {
+      opacity: 1;
+    }
+    89% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translateZ(-400em);
+    }
+  } 
+
+  .wars {
+    bottom: -0.5em;
+    animation: wars 10s ease-out infinite;
+  }
+
+  @keyframes wars {
+    0% {
+      opacity: 0;
+      transform: scale(1.5);
+    }
+    20% {
+      opacity: 1;
+    }
+    90% { 
+      opacity: 1;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translateZ(-400em);
+    }
+  }
+  </style>
+</head>
+<body>
+  <div class="starwars-demo">
+    <img src="./images/star.svg" alt="star"
+     class="star" />
+    <img src="./images/wars.svg" alt="wars"
+     class="wars" />
+  </div>
+</body>
+</html>
